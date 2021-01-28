@@ -19,7 +19,7 @@ setInterval(function () {
   let hr = time.getHours();
 
 
-  if (sec === 55 && min === 27 && flag === false) {
+  if (sec === 0 && min === 0 && flag === false) {
     console.log("run")
     flag = true;
     let vcode = hr;
