@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
-@keyframes haruna {
+@keyframes idle {
   0%   {top:0px;}
-  50%  {top:-10px;}
+  50%  {top:-10px;transform: rotate(-1deg);}
   100% {top:0px;}
 }
+
+@keyframes rotate {
+  0%   {transform: rotate(-0.5deg);}
+  50%  {transform: rotate(0.5deg);}
+  100% {transform: rotate(-0.5deg);}
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -40,8 +47,9 @@ body{
 #haruna{
   height: 80vh;
   position: relative;
-  animation-name: haruna;
-  animation-duration: 2s;
+  animation-name: idle;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease;
+  transform-origin: 50% 100%;
 }

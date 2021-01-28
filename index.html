@@ -7,36 +7,12 @@
     <title>榛名</title>
   </head>
   <body>
-    <audio id="myAudio">
-      <source src="./audio/Haruna-Battle_Start.ogg" type="audio/ogg">
-      Your browser does not support the audio element.
+    <audio id="audio">
     </audio>
     <img id="haruna" src="./img/Haruna_Kai_Ni_Full.webp" alt="haruna" />
     <div class="clock">
       <div class="display"></div>
     </div>
-    <script>
-      setInterval(function () {
-        const clock = document.querySelector(".display");
-        let time = new Date();
-        let sec = time.getSeconds();
-        let min = time.getMinutes();
-        let hr = time.getHours();
-        if (sec === 10) {
-          let haruna = document.getElementById("myAudio");
-          haruna.play();
-        }
-        if (sec < 10) {
-          sec = "0" + sec;
-        }
-        if (min < 10) {
-          min = "0" + min;
-        }
-        if (hr < 10) {
-          hr = "0" + hr;
-        }
-        clock.textContent = hr + ":" + min + ":" + sec;
-      });
-    </script>
+    <script src="./index.js" />
   </body>
 </html>
