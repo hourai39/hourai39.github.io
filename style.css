@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@keyframes haruna {
+  0%   {top:0px;}
+  50%  {top:-10px;}
+  100% {top:0px;}
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+}
+body{
+  display: grid;
+  place-items: center;
+  background: #131419;
+  background-image: url(./img/bg.jpg);
+}
+.clock{
+  padding-top: 30vh;
+  padding-left: 45vw;
+  background: #485e77;
+  height: 100px;
+  
+  line-height: 100px;
+  text-align: center;
+  padding: 0 30px;
+  box-shadow: -3px -3px 7px rgba(255,255,255,0.05),
+               3px 3px 5px rgba(0,0,0,0.5);
+  border-radius: 5px;
+}
+.clock .display{
+  font-size: 50px;
+  color: white;
+  letter-spacing: 5px;
+  font-family: 'Libre Baskerville', serif;
+}
+#haruna{
+  height: 80vh;
+  position: relative;
+  animation-name: haruna;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
