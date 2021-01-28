@@ -6,17 +6,20 @@
 //   holder += "\t\t\t</audio>\n"
 //   audio_handler.innerHTML += holder;
 // }
-let haruna = document.getElementById("haruna");
-let voice = document.getElementById("voice");
+
 var flag = false;
 setInterval(function () {
   const clock = document.querySelector(".display");
+  const haruna = document.getElementById("haruna");
+  const voice = document.getElementById("voice");
+
   let time = new Date();
   let sec = time.getSeconds();
   let min = time.getMinutes();
   let hr = time.getHours();
 
-  if (sec === 0 && min === 0 && flag === false) {
+
+  if (sec === 55 && min === 27 && flag === false) {
     console.log("run")
     flag = true;
     let vcode = hr;
