@@ -36,7 +36,7 @@ setInterval(function () {
   }
 
   if (sec === 1) {
-    flag = true;
+    flag = false;
   }
 
   if (sec < 10) {
