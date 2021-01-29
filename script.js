@@ -19,10 +19,10 @@ setInterval(function () {
   let hr = time.getHours();
 
 
-  if (sec === 0  && flag === false) {
+  if (sec === 0 && min === 0 && flag === false) {
     console.log("run")
     flag = true;
-    let vcode = min;
+    let vcode = hr;
     vcode = String(vcode < 10 ? ("0" + vcode) : vcode);
     voice.setAttribute("src", "./audio/Haruna-" + vcode + ".ogg");
     voice.play();
@@ -33,9 +33,6 @@ setInterval(function () {
   if (voice.ended) {
     haruna.style.animationName = "idle";
     haruna.style.animationDuration = "4s";
-  }
-
-  if (sec === 1) {
     flag = false;
   }
 
