@@ -1,4 +1,3 @@
-
 // for (let i = 0; i < 14; i++) {
 //   let holder = "";
 //   holder += "\t\t\t<audio id=\"" + i + "\">\n"
@@ -7,7 +6,35 @@
 //   audio_handler.innerHTML += holder;
 // }
 
+const quote = [
+  "Haruna-Attack.ogg",
+  "Haruna-Battle_Start.ogg",
+  "Haruna-Idle.ogg",
+  "Haruna-Library.ogg",
+  "Haruna-Night_Battle.ogg",
+  "Haruna-Secretary_1.ogg",
+  "Haruna-Secretary_2.ogg",
+  "Haruna-Secretary_3.ogg",
+];
 var flag = false;
+
+const ambience = document.getElementById("ambience");
+ambience.play();
+ambience.loop = true;
+
+function test() {
+  const haruna = document.getElementById("haruna");
+  const voice = document.getElementById("voice");
+
+  const audio = quote[Math.floor(Math.random() * quote.length)];
+  flag = true;
+  voice.setAttribute("src", "./audio/引用/" + audio);
+  voice.play();
+  haruna.style.animationName = "bounce";
+  haruna.style.animationDuration = "0.5s";
+  haruna.style.animationTimingFunction = "linear";
+}
+
 setInterval(function () {
   const clock = document.querySelector(".display");
   const haruna = document.getElementById("haruna");
@@ -18,13 +45,12 @@ setInterval(function () {
   let min = time.getMinutes();
   let hr = time.getHours();
 
-
   if (sec === 0 && min === 0 && flag === false) {
-    console.log("run")
+    console.log("run");
     flag = true;
     let vcode = hr;
-    vcode = String(vcode < 10 ? ("0" + vcode) : vcode);
-    voice.setAttribute("src", "./audio/Haruna-" + vcode + ".ogg");
+    vcode = String(vcode < 10 ? "0" + vcode : vcode);
+    voice.setAttribute("src", "./audio/時間/Haruna-" + vcode + ".ogg");
     voice.play();
     haruna.style.animationName = "rotate";
     haruna.style.animationDuration = "0.5s";
@@ -33,6 +59,7 @@ setInterval(function () {
   if (voice.ended) {
     haruna.style.animationName = "idle";
     haruna.style.animationDuration = "4s";
+    haruna.style.animationTimingFunction = "ease";
     flag = false;
   }
 
